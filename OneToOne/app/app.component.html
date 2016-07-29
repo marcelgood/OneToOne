@@ -1,0 +1,25 @@
+﻿<h1>Breeze one-to-one relationship example</h1>
+<div *ngIf="ready">
+    <button (click)="newHeader()">New Header</button>
+    <table>
+        <thead>
+            <tr>
+                <th>RequestHeader.Id</th>
+                <th>RequestHeader.Name</th>
+                <th>EaRequest.Id</th>
+                <th>EaRequest.Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of model">
+                <td>{{ item.id }}</td>
+                <td>{{ item.name }}</td>
+                <td>{{ item.eaRequest.id }}</td>
+                <td>{{ item.eaRequest.name }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div *ngIf="!ready">
+    Please wait...I'm busy doing stuff....
+</div>
